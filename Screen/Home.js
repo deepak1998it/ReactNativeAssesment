@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, View, LogBox, StyleSheet, StatusBar, ScrollView
 import { Card, Label } from 'native-base';
 import DatePicker from 'react-native-datepicker'
 import { connect } from 'react-redux';
-import { changeCount } from '../Redux/actions/actions';
+import { saveData } from '../Redux/actions/actions';
 import { bindActionCreators } from 'redux';
 // LogBox.ignoreAllLogs();
 const width = Dimensions.get('window').width;
@@ -33,7 +33,7 @@ const Home = (props) => {
             'dob': dob
         }
         data['data'].push(form_data)
-        await changeCount(data)
+        await saveData(data)
         setFirstName('')
         setLastName('')
         setaddress('')
@@ -125,7 +125,7 @@ const mapStateToProps = state => ({
 
 const ActionCreators = Object.assign(
     {},
-    changeCount,
+    saveData,
 );
 
 const mapDispatchToProps = dispatch => ({

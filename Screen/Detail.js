@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, Text, FlatList, View, StyleSheet, StatusBar, ScrollView, Dimensions, Image, Switch, CheckBox, TextInput } from 'react-native'
 import { CardItem, Card, } from 'native-base';
 import { connect } from 'react-redux';
-import { changeCount } from '../Redux/actions/actions';
+import { saveData } from '../Redux/actions/actions';
 import { bindActionCreators } from 'redux';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -65,7 +65,7 @@ const mapStateToProps = state => ({
 
 const ActionCreators = Object.assign(
     {},
-    changeCount,
+    saveData,
 );
 
 const mapDispatchToProps = dispatch => ({
